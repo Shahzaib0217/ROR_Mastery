@@ -109,10 +109,6 @@ Show actions are usually used to display individual items in a resource. For exa
 
 - a specific user's profile from a social media app
 
-- details of a specific stock from a stocks table
-
-- a specific recipe from a list of recipes
-
 The steps are to -
 
 1) Have a route for it
@@ -120,6 +116,11 @@ The steps are to -
 2) Have the corresponding controller/action that the route directs the request to
 
 3) Have a corresponding view to display to the user who makes the request
+
+
+# To pause Web Server and watch params
+- ByeBug
+- render plain: params[:article]
 
 # Flash Messages
 Flash and notice are same.
