@@ -124,6 +124,8 @@ The steps are to -
 
 # Flash Messages
 Flash and notice are same.
+To check messages in console use command,
+`article.errors.full_messages`
 
 # Update 
 
