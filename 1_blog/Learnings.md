@@ -140,3 +140,11 @@ The process of editing an existing article and updating the article in the artic
 4. Use the edit action to find the article to edit, display the existing article details in the edit form.
 
 5. Use the update action to find the article in the db. Whitelist the new title and description fields and if there are no validation errors, then update the article in the articles table with the new data.
+
+
+# Association and Authentication Systems
+
+## 1 to many association
+To create 1 to many association,
+- Shovel operator, i.e, user2.aerticles << article_2
+- Or we can mention in the model files using has_many and belongs_to keywords.
