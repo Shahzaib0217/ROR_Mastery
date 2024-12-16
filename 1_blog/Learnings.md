@@ -69,6 +69,9 @@ article.save`
 To check all the articles that exist in your articles table, you can use the following command:
 `Article.all`
 
+To check error messages,
+`user.errors.full_messages`
+
 # CRUD operations from Rails Console
 To find an article by id you can use the find method like below:
 
@@ -148,3 +151,7 @@ The process of editing an existing article and updating the article in the artic
 To create 1 to many association,
 - Shovel operator, i.e, user2.aerticles << article_2
 - Or we can mention in the model files using has_many and belongs_to keywords.
+
+
+## Validations
+https://guides.rubyonrails.org/active_record_validations.html
