@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
 
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
   # adding only, creates the mentioned routes only
   resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 end

@@ -157,3 +157,42 @@ https://guides.rubyonrails.org/active_record_validations.html
 ## Changning Object before saving
 `before_save {self.email = email.downcase}`
 
+## Adding secure password using bcrypt
+`https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html`
+
+3 step process to add auth system functionality from the back-end.
+
+Step 1) Add bcrypt gem:
+
+In the Gemfile uncomment the line that lists the gem:
+
+gem 'bcrypt', '~> 3.1.7'
+
+Then run $ bundle install to install the gem in your app.
+
+Step 2) Add has_secure_password to your user model. Add the line below in your user.rb model file:
+
+has_secure_password
+
+Step 3) Create a migration file to add the password_digest column to the users table.
+
+$ rails generate migration add_password_digest_to_users
+Then pull up the migration file and fill in the column details within the def change method:
+
+add_column :users, :password_digest, :string
+Save the file and run $ rails db:migrate to make the change to the table
+
+## Using Gravatar for binding image to email
+To have a profile image associated with an email account you control, add one using the site en.gravatar.com. This will be the globally recognized avatar (gravatar for short) associated with that email address (this step is not necessary to get the functionality working in the app).
+
+Summary of changes (actual ode can be found in the commit):
+
+- Add show action in users controller and a show.html.erb template under views/users.
+
+- Add gravatar_for as a helper method in app/helpers/application_helper.rb file.
+
+- Extract the articles listing code from views/articles/index.html.erb file and add it to an _article.html.erb partial within the same folder.
+
+- Render this partial from both the show and index templates. Be sure to initiate the appropriate instance variable from the users show action.
+
+
